@@ -1,34 +1,24 @@
-nombre_cliente=input("Ingrese el nombre del cliente: ")
-rut_cliente=input("Ingrese el rut del cliente: ")
-nacionalidad=input("Ingrese nacionalidad: ")
-sueldo=int(input("Ingrese su sueldo: "))
-antiguedad=int(input("Ingrese su antigüedad laboral (en años): "))
-morosidades=input("¿Tiene morosidades?: ")
+nombre=input("Ingrese su nombre:")
+run=input("Ingrese su run:")
+monto=int(input("Ingrese monto a solicitar:"))
+cuotas=int(input("Ingrese numero de cuotas:"))
+edad=int(input("Ingrese su edad:"))
+nacionalidad=input("Ingrese nacionalidad:")
+sueldo=int(input("Ingrese su sueldo:"))
+antiguedad=float(input("Ingrese antigüedad laboral: "))
+morosidad=input("¿Tiene morosidades? (si/no)")
 
+validador = True
 
-valido1 = 0
-while valido1 == 0:
-    monto_credito=int(input("Ingrese el monto a solicitar: "))
-    if monto_credito>=500000:
-        print("El monto está en el rango solicitado.")
-        valido = 1
-    else:
-        print("Debe solicitar un monto sobre $500.000")
+if monto>500000:
+    print("El monto puede ser aprobado")
+else:
+    validador=False
+    print("El monto debe ser superior a $500.000.-")
 
-valido2 = 0
-while valido2 == 0:
-    cuotas_credito=int(input("Ingrese el plazo de cuotas: "))
-    if cuotas_credito>=3 and cuotas_credito<=84:
-        print("Las cuotas están en el rango solicitado.")
-        valido = 1
-    else:
-        print("Las cuotas están fuera del rango")
+if cuotas>=3 and cuotas <=84:
+    print(f"La cantidad {cuotas} de cuotas son validas")
+else:
+    validador=False
+    print("Debe ingresar un valor entre 3 y 84 cuotas")
 
-valido3 = 0
-while valido3 == 0:
-    edad_cliente=int(input("Ingrese su edad: "))
-    if edad_cliente>=24 and edad_cliente<=79:
-        print("El rango de edad es correcto.")
-        valido = 1
-    else:
-        print("Se encuentra fuera de la edad solicitada")
